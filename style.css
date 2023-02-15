@@ -68,11 +68,3 @@ img {
 strong {
     color: #22D4FD;
 }
-
-@media (min-width:500px) {
-    img {
-        width: 10%;
-        right: 50%;
-        position: relative;
-    }
-}
