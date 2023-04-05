@@ -69,3 +69,13 @@ img {
 p {
     width: 52%;
 }
+
+@media (max-width:2688px) and (min-width:379px) {
+    header,
+    nav {
+        width: 100vw;
+    }
+    .paragrafo_projetos {
+        top: 50%;
+    }
+}

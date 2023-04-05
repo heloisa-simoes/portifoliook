@@ -50,10 +50,34 @@ a:hover {
     padding: 0;
     flex-direction: row;
     display: flex;
-    width: 400px;
+    width: 500px;
     border-radius: 5%;
     margin-top: 100px;
     justify-content: center;
     align-items: center;
     border: 1px solid black;
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width:2688px) and (min-width:379px) {
+    header,
+    nav {
+        width: 100vw;
+    }
+    .paragrafo_projetos {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        width: 75%;
+        display: none;
+    }
+    .imagem_projetos {
+        width: 40%;
+    }
 }
