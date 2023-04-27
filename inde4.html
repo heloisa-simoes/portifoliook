@@ -26,3 +26,100 @@
 
     margin: 0; padding: 0; flex-direction: row; display: flex; width: 400px; border-radius: 5%; margin-top: 100px; justify-content: center; align-items: center; border: 1px solid black;
 </div>
+
+
+!Em caso de transição de imagem como Portifólio, ultiliar dessa forma aqui: 
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slides em JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="slider">
+        <img class="selected" src="https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/bltc26f9c24cce8b3cd/6360ffe5016efc5347f921b3/GettyImages-1243553711.jpg?auto=webp&format=jpg&quality=80" alt="">
+        <img src="https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/bltfd6f22d9d0494112/638e44e494eb720b623aec72/GettyImages-1446977379.jpg?auto=webp&format=pjpg&width=3840&quality=60" alt="">
+        <img src="https://conteudo.imguol.com.br/c/esporte/2f/2022/07/31/neymar-comemora-seu-gol-no-amistoso-do-psg-contra-o-nantes-em-tel-aviv-31072022-1659297011329_v2_1x1.jpg" alt="">
+        <img src="https://img.r7.com/images/12-neymar-atacante-psg-fra-27012023184032686?dimensions=771x420&resize=771x420&crop=1280x697+0+155" alt="">
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
+
+! E depois o JavaScript FICA DESSA MANEIRA  
+let time = 5000,
+    currentImageIndex = 0,
+    images = document
+    .querySelectorAll("#slider img")
+max = images.length;
+
+function nextImage() {
+
+    images[currentImageIndex]
+        .classList.remove("selected")
+
+    currentImageIndex++
+
+    if (currentImageIndex >= max)
+        currentImageIndex = 0
+
+    images[currentImageIndex]
+        .classList.add("selected")
+}
+
+function start() {
+    setInterval(() => {
+        // troca de image
+        nextImage()
+    }, time)
+}
+
+window.addEventListener("load", start)
+
+
+
+Logo após o CSS 
+body {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+h1 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#slider {
+    width: 80%;
+    max-width: 500px;
+    height: 25vw;
+    max-height: 150px;
+    position: relative;
+}
+
+#slider img {
+    margin-top: 25%;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 300%;
+    object-fit: cover;
+    transition: opacity 800ms;
+}
+
+#slider img.selected {
+    opacity: 1;
+}
