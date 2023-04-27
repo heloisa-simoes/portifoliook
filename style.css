@@ -68,10 +68,3 @@ img {
 strong {
     color: #22D4FD;
 }
-
-@media (max-width:2688px) and (min-width:379px) {
-    header,
-    nav {
-        width: 100vw;
-    }
-}

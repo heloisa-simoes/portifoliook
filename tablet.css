@@ -1,0 +1,14 @@
+@media (max-width: 960px) {
+    header {
+        max-width: 650px;
+        display: flex;
+        justify-content: space-between;
+    }
+    body {
+        max-width: 960px;
+        width: 100%;
+    }
+    img {
+        display: none;
+    }
+}
